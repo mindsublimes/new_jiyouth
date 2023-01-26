@@ -35,3 +35,10 @@ document.addEventListener("turbolinks:load", () => {
         return new Popover(popoverTriggerEl)
     })
 })
+
+require("packs/plugins.min.js");
+require("packs/modernizr.min.js");
+require("packs/theme.js");
+require("packs/custom.js");
+require("packs/theme.init.js");
+// require("packs/view.contact.js");
