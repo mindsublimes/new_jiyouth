@@ -2,16 +2,29 @@
 <html>
   <head>
     <title>JiyouthApp</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <%= csrf_meta_tags %> <%= csp_meta_tag %>
+    <!-- Mobile Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no"
+    />
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link
+      id="googleFonts"
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800%7CShadows+Into+Light&display=swap"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <%= stylesheet_link_tag 'application', media: 'all',
+    'data-turbolinks-track': 'reload' %> <%= javascript_pack_tag 'application',
+    'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-
-    <%= yield %>
+  <body data-plugin-page-transition>
+    <%= render "layouts/shared/header" -%>
+    <%= yield %> 
+    <%= render"layouts/shared/footer" -%>
   </body>
 </html>
