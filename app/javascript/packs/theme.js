@@ -6466,8 +6466,8 @@ window.theme.fn = {
 		targetClass: '.section',
 		dotsNav: true,
 		changeHeaderLogo: true,
-		headerLogoDark: 'img/logo-default-slim.png',
-		headerLogoLight: 'img/logo-default-slim-dark.png'
+		headerLogoDark: '/assets/jiyouthlogo.png',
+		headerLogoLight: '/assets/jiyouthlogo.png'
 	};
 
 	PluginSectionScroll.prototype = {

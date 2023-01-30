@@ -1447,7 +1447,7 @@ html.sticky-header-enabled #header .header-logo-sticky-change {
 
 html.sticky-header-enabled #header .header-logo-sticky-change img {
 	position: absolute;
-	top: 0;
+	top: -15px;
 	left: 0;
 }
 

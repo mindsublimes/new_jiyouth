@@ -41,11 +41,13 @@ document.addEventListener("turbolinks:load", () => {
     })
 })
 
-require("packs/plugins.min.js");
+// require("packs/modernizr.min.js");
 
-require("packs/theme.init.js");
+document.addEventListener("turbolinks:load", function () {
+    require("packs/plugins.min.js");
+    require("packs/theme.js");
+    require("packs/custom.js");
+    require("packs/theme.init.js");
+})
 
-require("packs/modernizr.min.js");
-require("packs/theme.js");
-require("packs/custom.js");
 // require("packs/view.contact.js");
