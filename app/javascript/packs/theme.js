@@ -860,7 +860,12 @@ window.theme.fn = {
 	$window.on('resize dynamic.height.resize', function(){
 		$('[data-dynamic-height]').each(function(){
 			var $this = $(this),
-				values = JSON.parse($this.data('dynamic-height').replace(/'/g,'"').replace(';',''))
+				values = JSON.parse($this.data('dynamic-height').replace(/'/g, '"').replace(';', ''))
+			
+			if( $window.width() < 476 ) {
+				console.log($this.height( values[5] ));
+				$this.height( values[5] );
+			}
 
 			// XS
 			if( $window.width() < 576 ) {

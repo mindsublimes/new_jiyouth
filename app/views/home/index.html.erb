@@ -1,9 +1,12 @@
 <div class="body">
   <div role="main" class="main">
+    <!-- FOR DESKTOP -->
     <div
-      class="owl-carousel owl-carousel-light owl-carousel-light-init-fadeIn owl-theme manual dots-inside dots-horizontal-center show-dots-hover show-dots-xs nav-style-1 nav-inside nav-inside-plus nav-dark nav-lg nav-font-size-lg show-nav-hover mb-0"
-      data-plugin-options="{'autoplayTimeout': 7000}"
-      data-dynamic-height="['650px','650px','650px','550px','500px']"
+      class="owl-carousel owl-carousel-light owl-carousel-light-init-fadeIn owl-theme manual
+       dots-inside dots-horizontal-center show-dots-hover show-dots-xs nav-style-1 nav-inside
+        nav-inside-plus nav-dark nav-lg nav-font-size-lg show-nav-hover mb-0 d-none d-lg-block"
+      data-plugin-options="{'autoplayTimeout': 4000}"
+      data-dynamic-height="['650px','550px','500px','500px','500px','500px','500px','320px']"
       style="height: 650px"
     >
       <div class="owl-stage-outer">
@@ -145,6 +148,162 @@
         <button role="button" class="owl-dot"><span></span></button>
       </div>
     </div>
+
+    <!-- FOR TABLETS -->
+    <div
+      class="owl-carousel owl-carousel-light owl-carousel-light-init-fadeIn owl-theme manual
+       dots-inside dots-horizontal-center show-dots-hover show-dots-xs nav-style-1 nav-inside
+        nav-inside-plus nav-dark nav-lg nav-font-size-lg show-nav-hover mb-0 d-none d-md-block d-lg-none"
+      data-plugin-options="{'autoplayTimeout': 3000}"
+      data-dynamic-height="['650px','650px','800px','550px','500px']"
+      style="height: 950px"
+    >
+      <div class="owl-stage-outer">
+        <div class="owl-stage">
+          <!-- Carousel Slide 1 -->
+          <div
+            class="owl-item position-relative"
+            style="
+              background-image: url(/assets/slides/tablet-banner.png);
+              background-size: cover;
+              background-position: center;
+            "
+          ></div>
+
+          <!-- Carousel Slide 2 -->
+          <div class="owl-item position-relative overflow-hidden">
+            <div
+              class="background-image-wrapper position-absolute top-0 left-0 right-0 bottom-0"
+              data-appear-animation="kenBurnsToRight"
+              data-appear-animation-duration="13s"
+              data-plugin-options="{'minWindowWidth': 0}"
+              data-carousel-onchange-show
+              style="
+                background-image: url(/assets/slides/tablet-banner.png);
+                background-size: cover;
+                background-position: center;
+              "
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="owl-nav">
+        <button type="button" role="presentation" class="owl-prev"></button>
+        <button type="button" role="presentation" class="owl-next"></button>
+      </div>
+      <div class="owl-dots mb-5">
+        <button role="button" class="owl-dot active"><span></span></button>
+        <button role="button" class="owl-dot"><span></span></button>
+      </div>
+    </div>
+
+    <!-- FOR MOBILE -->
+    <div
+      class="owl-carousel owl-carousel-light owl-carousel-light-init-fadeIn owl-theme manual
+       dots-inside dots-horizontal-center show-dots-hover show-dots-xs nav-style-1 nav-inside
+        nav-inside-plus nav-dark nav-lg nav-font-size-lg show-nav-hover mb-0 d-md-none d-none"
+      data-plugin-options="{'autoplayTimeout': 4000}"
+      data-dynamic-height="['650px','650px','650px','550px','1124px','891px', '865px', '891px' ]"
+      style="height: 891px"
+    >
+      d-SM-block
+
+      <div class="owl-stage-outer">
+        <div class="owl-stage">
+          <!-- Carousel Slide 1 -->
+          <div
+            class="owl-item position-relative"
+            style="
+              background-image: url(/assets/slides/mobile-banner-1.png);
+              background-size: cover;
+              background-position: center;
+            "
+          ></div>
+
+          <!-- Carousel Slide 2 -->
+          <div class="owl-item position-relative overflow-hidden">
+            <div
+              class="background-image-wrapper position-absolute top-0 left-0 right-0 bottom-0"
+              data-appear-animation="kenBurnsToRight"
+              data-appear-animation-duration="13s"
+              data-plugin-options="{'minWindowWidth': 0}"
+              data-carousel-onchange-show
+              style="
+                background-image: url(/assets/slides/mobile-banner-2.png);
+                background-size: cover;
+                background-position: center;
+              "
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="owl-nav">
+        <button type="button" role="presentation" class="owl-prev"></button>
+        <button type="button" role="presentation" class="owl-next"></button>
+      </div>
+      <div class="owl-dots mb-5">
+        <button role="button" class="owl-dot active"><span></span></button>
+        <button role="button" class="owl-dot"><span></span></button>
+      </div>
+    </div>
+
+     <!-- FOR MOBILE  < 768-->
+
+    <div
+      class="owl-carousel owl-carousel-light owl-carousel-light-init-fadeIn owl-theme manual
+       dots-inside dots-horizontal-center show-dots-hover nav-style-diamond nav-with-transparency
+        nav-inside nav-inside-plus nav-dark nav-md nav-font-size-md show-nav-hover mb-0
+        d-md-none"
+      data-plugin-options="{'autoplay': false, 'autoplayTimeout': 7000}"
+      data-dynamic-height="['700px','700px','600px','500px','295px']"
+      style="height: 410px; opacity: 1"
+     >
+      <div class="owl-stage-outer">
+        <div class="owl-stage">
+          <!-- Carousel Slide 1 -->
+          <div class="owl-item position-relative removing animated fadeOut">
+            <div
+              class="background-image-wrapper position-absolute top-0 left-0 right-0 bottom-0 appear-animation animated appear-animation-visible"
+              data-appear-animation="kenBurnsToRight"
+              data-appear-animation-duration="3s"
+              data-plugin-options="{'minWindowWidth': 0}"
+              data-carousel-onchange-show=""
+              style="
+                background-image: url(/assets/slides/mobile-banner-1.png);
+                background-size: cover;
+                background-position: center;
+              "
+            ></div>
+            
+          </div>
+
+          <!-- Carousel Slide 2 -->
+          <div class="owl-item position-relative removing animated fadeOut">
+            <div
+              class="background-image-wrapper position-absolute top-0 left-0 right-0 bottom-0 appear-animation animated appear-animation-visible"
+              data-appear-animation="kenBurnsToRight"
+              data-appear-animation-duration="3s"
+              data-plugin-options="{'minWindowWidth': 0}"
+              data-carousel-onchange-show=""
+              style="
+                background-image: url(/assets/slides/mobile-banner-2.png);
+                background-size: cover;
+                background-position: center;
+              "
+            ></div>
+            
+          </div>
+        
+        </div>
+      </div>
+      <div class="owl-nav mt-5">
+        <button type="button" role="presentation" class="owl-prev"></button>
+        <button type="button" role="presentation" class="owl-next"></button>
+      </div>
+    </div>
+
     <section class="section bg-color-light border-0 m-0">
       <div class="container">
         <div class="row text-center text-md-start">
@@ -162,7 +321,6 @@
                   src="/assets/icons/seo-grey.png"
                   alt=""
                 />
-                
               </div>
               <div class="col-lg-8">
                 <h2 class="font-weight-bold text-5 line-height-5 mb-1">
@@ -380,7 +538,7 @@
             <article>
               <div class="row">
                 <div class="col">
-                  <a href="blog-post.html" class="text-decoration-none">
+                  <a href="#" class="text-decoration-none">
                     <img
                       src="/assets/blog/deligation_1_450x231.jpg"
                       class="img-fluid hover-effect-2 mb-3"
@@ -404,7 +562,7 @@
                 </div>
                 <div class="col ps-1">
                   <h4 class="line-height-3 text-4">
-                    <a href="blog-post.html" class="text-light"
+                    <a href="#" class="text-light"
                       >Delegation of JI Youth’s Central Team ...</a
                     >
                   </h4>
@@ -424,7 +582,7 @@
             <article>
               <div class="row">
                 <div class="col">
-                  <a href="blog-post.html" class="text-decoration-none">
+                  <a href="#" class="text-decoration-none">
                     <img
                       src="/assets/blog/blog-corporate-3-1.jpg"
                       class="img-fluid hover-effect-2 mb-3"
@@ -448,7 +606,7 @@
                 </div>
                 <div class="col ps-1">
                   <h4 class="line-height-3 text-4">
-                    <a href="blog-post.html" class="text-light"
+                    <a href="#" class="text-light"
                       >Lorem ipsum dolor sit amet, consectetur</a
                     >
                   </h4>
@@ -468,7 +626,7 @@
             <article>
               <div class="row">
                 <div class="col">
-                  <a href="blog-post.html" class="text-decoration-none">
+                  <a href="#" class="text-decoration-none">
                     <img
                       src="/assets/blog/blog-corporate-3-1.jpg"
                       class="img-fluid hover-effect-2 mb-3"
@@ -492,7 +650,7 @@
                 </div>
                 <div class="col ps-1">
                   <h4 class="line-height-3 text-4">
-                    <a href="blog-post.html" class="text-light"
+                    <a href="#" class="text-light"
                       >Lorem ipsum dolor sit amet, consectetur</a
                     >
                   </h4>
@@ -512,7 +670,7 @@
             <article>
               <div class="row">
                 <div class="col">
-                  <a href="blog-post.html" class="text-decoration-none">
+                  <a href="#" class="text-decoration-none">
                     <img
                       src="/assets/blog/blog-corporate-3-1.jpg"
                       class="img-fluid hover-effect-2 mb-3"
@@ -536,7 +694,7 @@
                 </div>
                 <div class="col ps-1">
                   <h4 class="line-height-3 text-4">
-                    <a href="blog-post.html" class="text-light"
+                    <a href="#" class="text-light"
                       >Lorem ipsum dolor sit amet, consectetur</a
                     >
                   </h4>

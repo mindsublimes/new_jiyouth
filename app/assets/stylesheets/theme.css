@@ -1199,8 +1199,9 @@ pre {
 }
 
 #header .header-btn-collapse-nav {
-	background: #CCC;
+	/* background: #CCC; */
 	color: #FFF;
+	border: 1px solid #fff;
 	display: none;
 	float: right;
 	margin: 0 0 0 16px;
