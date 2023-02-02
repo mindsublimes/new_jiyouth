@@ -9743,3 +9743,13 @@ window.theme.fn = {
 	});
 
 }).apply(this, [window.theme, jQuery]);
+
+
+
+// $(".scroll-to-top").click(function () {
+// 	window.scrollTo(0);
+	
+// });
+
+
+
