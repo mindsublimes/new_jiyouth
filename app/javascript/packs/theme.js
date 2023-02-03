@@ -6234,7 +6234,7 @@ window.theme.fn = {
 				buttonClass: 'scroll-to-top',
 				buttonAriaLabel: 'Scroll To Top',
 				iconClass: 'fas fa-chevron-up',
-				delay: 1000,
+				delay: 100,
 				visibleMobile: false,
 				label: false,
 				easing: 'easeOutBack'
@@ -9087,7 +9087,7 @@ window.theme.fn = {
 										.blur()
 										.closest('.control-group')
 										.removeClass('success')
-										.removeClass('error');
+										scroll-to-top			.removeClass('error');
 
 								} else {
 

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'form/index'
+  get 'form/show'
   get 'aboutus/index'
   get 'news/index'
   get 'news/show'

@@ -127,8 +127,23 @@
   }
 
   @media only screen and (max-width: 767px) {
+    .prev,.next {
+      visibility: visible;
+    }
     .circle-controle {
       display: none;
     }
   }
+
+  @media only screen and (max-width: 425px) {
+    a.next::before{
+      content: "";
+    }
+  
+    a.prev::before{
+      content: "";
+    }
+  }
+
+
 }
