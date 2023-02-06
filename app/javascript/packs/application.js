@@ -42,7 +42,6 @@ document.addEventListener("turbolinks:load", () => {
 })
 
 // require("packs/modernizr.min.js");
-
 document.addEventListener("turbolinks:load", function () {
     require("packs/plugins.min.js");
     require("packs/theme.js");
