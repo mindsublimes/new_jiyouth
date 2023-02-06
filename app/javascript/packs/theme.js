@@ -8713,37 +8713,11 @@ window.theme.fn = {
 				});				
 				
 				// Set Header Body Height when open mobile menu
-				$('.header-nav-main nav').on('show.bs.collapse', function () {
-				 	$(this).removeClass('closed');
+				
 
-				 	// Add Mobile Menu Opened Class
-				 	$('html').addClass('mobile-menu-opened');
+				// ---BELOW LINES COMMIT BY ME
 
-			 		$('.header-body').animate({
-				 		height: ($('.header-body').outerHeight() + $('.header-nav-main nav').outerHeight(true)) + 10
-				 	});
-
-				 	// Header Below Slider / Header Bottom Slider - Scroll to menu position
-				 	if( $('#header').is('.header-bottom-slider, .header-below-slider') && !$('html').hasClass('sticky-header-active') ) {
-				 		self.scrollToTarget( $('#header'), 0 );
-				 	}
-				});
-
-				// Set Header Body Height when collapse mobile menu
-				$('.header-nav-main nav').on('hide.bs.collapse', function () {
-				 	$(this).addClass('closed');
-
-				 	// Remove Mobile Menu Opened Class
-				 	$('html').removeClass('mobile-menu-opened');
-
-			 		$('.header-body').animate({
-				 		height: ($('.header-body').outerHeight() - $('.header-nav-main nav').outerHeight(true))
-				 	}, function(){
-				 		$(this).height('auto');
-				 	});
-				});
-
-				// Header Effect Shrink - Adjust header body height on mobile
+				//Header Effect Shrink - Adjust header body height on mobile
 				$window.on('stickyHeader.activate', function(){
 					if( $window.width() < 992 && $header.hasClass('header-effect-shrink') ) {
 						if( $('.header-btn-collapse-nav').attr('aria-expanded') == 'true' ) {
@@ -8763,6 +8737,8 @@ window.theme.fn = {
 						}
 					}
 				});
+
+				// ---BELOW LINES COMMIT BY ME
 
 				// Remove Open Class on Resize		
 				$window.on('resize.removeOpen', function(e) {

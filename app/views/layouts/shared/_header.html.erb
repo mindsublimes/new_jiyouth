@@ -156,7 +156,7 @@
                 <div
                   class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1"
                 >
-                  <nav class="collapse">
+                  <nav class="custome-handle collapse">
                     <ul class="nav nav-pills" id="mainNav">
                       <li class="dropdown dropdown-full-color dropdown-light">
                         <a
@@ -199,8 +199,6 @@
                 </div>
                 <button
                   class="btn header-btn-collapse-nav my-2"
-                  data-bs-toggle="collapse"
-                  data-bs-target=".header-nav-main nav"
                 >
                   <i class="fas fa-bars"></i>
                 </button>
@@ -212,3 +210,37 @@
     </div>
   </div>
 </header>
+
+
+<script>
+$(document).ready(function(){
+  $("body").on("click", ".header-btn-collapse-nav", function(e){
+    if ($('.header-nav-main nav').hasClass("show")){
+      $('.header-nav-main nav').removeClass("show")
+      $('.header-nav-main nav').addClass("closed")
+
+      $('html').removeClass('mobile-menu-opened');
+
+			 		$('.header-body').animate({
+				 		height: ($('.header-body').outerHeight() - $('.header-nav-main nav').outerHeight(true))
+				 	}, function(){
+				 		$(this).height('auto');
+				 	});
+    } else {
+      $('.header-nav-main nav').removeClass("closed")
+      $('.header-nav-main nav').addClass("show")
+      $('html').addClass('mobile-menu-opened');
+
+			 		$('.header-body').animate({
+				 		height: ($('.header-body').outerHeight() + $('.header-nav-main nav').outerHeight(true)) + 10
+				 	});
+
+				 	//Header Below Slider / Header Bottom Slider - Scroll to menu position
+				 	if( $('#header').is('.header-bottom-slider, .header-below-slider') && !$('html').hasClass('sticky-header-active') ) {
+				 		self.scrollToTarget( $('#header'), 0 );
+				 	}
+    } 
+  })
+
+});
+</script>
