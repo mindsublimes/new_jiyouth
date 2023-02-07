@@ -12,8 +12,11 @@
 
 ActiveRecord::Schema.define(version: 2023_02_07_134228) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "districts", force: :cascade do |t|
-    t.integer "province_id"
+    t.bigint "province_id"
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -22,7 +25,7 @@ ActiveRecord::Schema.define(version: 2023_02_07_134228) do
 
   create_table "members", force: :cascade do |t|
     t.string "area_type"
-    t.integer "area_id"
+    t.bigint "area_id"
     t.string "name"
     t.string "father_name"
     t.string "email"
@@ -40,7 +43,7 @@ ActiveRecord::Schema.define(version: 2023_02_07_134228) do
   end
 
   create_table "punjab_local_governments", force: :cascade do |t|
-    t.integer "district_id"
+    t.bigint "district_id"
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -48,7 +51,7 @@ ActiveRecord::Schema.define(version: 2023_02_07_134228) do
   end
 
   create_table "units", force: :cascade do |t|
-    t.integer "punjab_local_government_id"
+    t.bigint "punjab_local_government_id"
     t.integer "unit_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
