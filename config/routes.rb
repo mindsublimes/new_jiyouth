@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :users
+  namespace :admin do
+    resources :members
+  end
   get 'form/index'
   get 'form/show'
   get 'aboutus/index'
