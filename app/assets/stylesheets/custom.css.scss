@@ -1,3 +1,13 @@
+// HOME PAGE
+.section-cto{
+  a{
+    text-decoration: none;
+    &:hover{
+      text-decoration: none !important;
+    }
+  }
+}
+
 .slideshow-container {
   .mySlidesBanner {
     display: none;

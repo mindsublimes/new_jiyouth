@@ -76,7 +76,7 @@
     width: 100%;
     font-size: 1em;
     border: 1px solid #e3e3e3;
-    border-radius: 5px;
+    border-radius: 5px !important;
   }
 
   #signUpForm input:focus {
@@ -89,7 +89,9 @@
     outline: 0 !important;
     box-shadow: none;
   }
-  
+  #signUpForm option:hover {
+    background-color: yellow !important;
+  }
   #signUpForm input.invalid {
     border: 1px solid #ffaba5;
   }
@@ -120,4 +122,19 @@
     background-color: #fff;
     color: #0e1e40;
   }
+
+  #signUpForm select option:checked,
+#signUpForm select option:hover {
+  box-shadow: 0 0 10px 100px #0e1e40 inset;
+  color: #fff !important;
+
+
+
+}
+
+#signUpForm select:focus>option:checked {
+  background: #0e1e40 !important;
+  color: #fff !important;
+}
+
 }

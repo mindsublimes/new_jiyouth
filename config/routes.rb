@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :members
   end
+
+  get 'team/index'
+  get 'team/show'
   get 'form/index'
   get 'form/show'
   get 'aboutus/index'

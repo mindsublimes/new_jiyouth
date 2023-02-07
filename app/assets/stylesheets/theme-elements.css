@@ -16628,7 +16628,7 @@ html.gecko .sort-destination.sort-destination-margin > [class*="col-"] {
 }
 
 .thumb-info .thumb-info-type {
-	background-color: #CCC;
+	background-color: #0e1e40;
 	border-radius: 2px;
 	display: inline-block;
 	float: left;
@@ -17170,7 +17170,7 @@ html.gecko .sort-destination.sort-destination-margin > [class*="col-"] {
 }
 
 .thumb-info-social-icons a {
-	background: #CCC;
+	background: #0e1e40;
 	border-radius: 25px;
 	display: inline-block;
 	height: 30px;

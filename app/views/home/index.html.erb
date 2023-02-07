@@ -2,9 +2,34 @@
   <div role="main" class="main">
     <%= render "layouts/shared/desktop-slider" -%>
 
-    <section class="section bg-color-light border-0 m-0">
+    <section class="section section-cto bg-color-light border-0 m-0">
       <div class="container">
         <div class="row text-center text-md-start">
+          <div
+            class="col-md-4 mb-4 mb-md-0 appear-animation"
+            data-appear-animation="fadeIn"
+          >
+            <a href="/">
+              <div
+                class="row align-items-center justify-content-center justify-content-md-start"
+              >
+                <div class="col-4">
+                  <img
+                    class="img-fluid mb-4 mb-lg-0"
+                    src="/assets/icons/marketing-grey.png"
+                    alt=""
+                  />
+                </div>
+                <div class="col-lg-8">
+                  <h2 class="font-weight-bold text-5 line-height-5 mb-1">
+                    Get Involved
+                  </h2>
+                  <p class="mb-0">Become a Member.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
           <div
             class="col-md-4 mb-4 mb-md-0 appear-animation"
             data-appear-animation="fadeInLeftShorter"
@@ -28,28 +53,7 @@
               </div>
             </div>
           </div>
-          <div
-            class="col-md-4 mb-4 mb-md-0 appear-animation"
-            data-appear-animation="fadeIn"
-          >
-            <div
-              class="row align-items-center justify-content-center justify-content-md-start"
-            >
-              <div class="col-4">
-                <img
-                  class="img-fluid mb-4 mb-lg-0"
-                  src="/assets/icons/marketing-grey.png"
-                  alt=""
-                />
-              </div>
-              <div class="col-lg-8">
-                <h2 class="font-weight-bold text-5 line-height-5 mb-1">
-                  Get Involved
-                </h2>
-                <p class="mb-0">Become a volunteer.</p>
-              </div>
-            </div>
-          </div>
+
           <div
             class="col-md-4 appear-animation"
             data-appear-animation="fadeInRightShorter"
@@ -205,15 +209,13 @@
           </p>
 
           <a
-            href="/"
+            href="/team/index"
             class="btn btn-dark font-weight-semibold rounded-0 px-5 btn-py-2 text-2 p-relative bottom-3"
             >READ MORE</a
           >
         </div>
       </div>
     </div>
-
-
 
     <section
       class="section section-height-3 bg-primary border-0 m-0 appear-animation"
