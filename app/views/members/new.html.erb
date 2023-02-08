@@ -58,8 +58,39 @@
     </div>
 
     <!-- step three -->
-    <div class="step">
-      <p class="text-center mb-4">Your presence on the social network</p>
+
+     <div class="step">
+      <p class="text-center mb-4">Personal Inforamtion & presence on the social network</p>
+      <div class="mb-3">
+        <label for="inputName">Full Name <span class="text-danger"> *</span></label>
+        <input
+          type="text"
+          placeholder="Fullname "
+          oninput="this.className = ''"
+          name="fname"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="inputEmail">Email Address<span class="text-danger"> *</span></label>
+        <input
+          type="email"
+          placeholder="Enter Email address "
+          required
+          name="email"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="forPhone">Phone # <span class="text-danger"> *</span></label>
+        <input
+          type="number"
+          placeholder="Enter your phone number"
+          name="phone"
+        />
+      </div>
+
+
       <div class="mb-3">
         <label for="input">LinkedIn URL <span class="text-danger"> *</span></label>
         <input
