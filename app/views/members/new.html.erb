@@ -14,8 +14,8 @@
       <p class="text-center mb-4">Create your account</p>
       <div class="mb-3">
         <label for="cnic"
-          >Enter National ID # <span class="text-danger"> *</span></label>
-        <input type="text" id="cnic"  data-inputmask="'mask': '99999-9999999-9'"  placeholder="XXXXX-XXXXXXX-X"  name="cnic" required="true" minlength="15" maxlength="15" >
+          >Enter National ID # <span class="text-danger"> (xxxxx-xxxxxx-x)*</span></label>
+        <input type="text" id="cnic"  placeholder="XXXXX-XXXXXXX-X"  name="cnic" required="true" minlength="15" maxlength="15" >
       </div>
     </div>
 
@@ -39,7 +39,7 @@
       </div>
 
       <div class="mb-3">
-        <label for="district_area">Area (Punjab Local Govt Structure)<span class="text-danger"> *</span></label>
+        <label for="district_area">Area (Local Govt Structure)<span class="text-danger"> *</span></label>
         <div id="district_area">
           <select class="form-select my-select-tag form-select-lg" disabled>
             <option value="" disabled selected>Select Area</option>
@@ -48,9 +48,9 @@
       </div>
 
       <div class="mb-3 main" id="area_unit">
-        <label for="units">Union Councils <span class="text-danger"> *</span></label>
+        <label for="units">Councils <span class="text-danger"> *</span></label>
         <select class="form-select my-select-tag form-select-lg" disabled>
-          <option value="" disabled selected>Select Union Council</option>
+          <option value="" disabled selected>Select Council</option>
         </select>
       </div>
 
@@ -89,7 +89,7 @@
       <button type="button" id="prevBtn" onclick="nextPrev(-1)">
         Previous
       </button>
-      <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+      <button type="button" id="nextBtn" onclick="nextPrev(1)" disabled>Next</button>
     </div>
     <!-- end previous / next buttons -->
   <% end -%>
@@ -100,8 +100,18 @@
 <%# <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/jquery.inputmask.bundle.js"></script> %>
 <script>
 
+  $("#cnic").on('keyup', function() {
+    cnic_no = $(this).val();
+    cnic_no_regex = /^[0-9+]{5}-[0-9+]{7}-[0-9]{1}$/;
+    if(cnic_no_regex.test(cnic_no))
+    {
+        $("#nextBtn").prop('disabled', false);
+    }
+    else {
+      $("#nextBtn").prop('disabled', true); 
+    }
+  })  
 
-  $("#cnic").inputmask();
   var currentTab = 0; // Current tab is set to be the first tab (0)
   showTab(currentTab); // Display the current tab
 

@@ -1,6 +1,6 @@
-class CreatePunjabLocalGovernments < ActiveRecord::Migration[6.1]
+class CreateLocalGovernmentStructures < ActiveRecord::Migration[6.1]
   def change
-    create_table :punjab_local_governments do |t|
+    create_table :local_government_structures do |t|
       t.references :district
       t.string :title
       t.integer :area

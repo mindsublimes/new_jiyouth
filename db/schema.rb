@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 2023_02_07_134228) do
     t.index ["province_id"], name: "index_districts_on_province_id"
   end
 
+  create_table "local_government_structures", force: :cascade do |t|
+    t.bigint "district_id"
+    t.string "title"
+    t.integer "area"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["district_id"], name: "index_local_government_structures_on_district_id"
+  end
+
   create_table "members", force: :cascade do |t|
     t.string "area_type"
     t.bigint "area_id"
@@ -42,20 +51,13 @@ ActiveRecord::Schema.define(version: 2023_02_07_134228) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "punjab_local_governments", force: :cascade do |t|
-    t.bigint "district_id"
+  create_table "units", force: :cascade do |t|
+    t.bigint "local_government_structure_id"
+    t.integer "unit_name"
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["district_id"], name: "index_punjab_local_governments_on_district_id"
-  end
-
-  create_table "units", force: :cascade do |t|
-    t.bigint "punjab_local_government_id"
-    t.integer "unit_name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["punjab_local_government_id"], name: "index_units_on_punjab_local_government_id"
+    t.index ["local_government_structure_id"], name: "index_units_on_local_government_structure_id"
   end
 
   create_table "users", force: :cascade do |t|

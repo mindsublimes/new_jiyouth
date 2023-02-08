@@ -4,7 +4,7 @@ class MembersController < ApplicationController
     unit =  if params["unit"].present?
               Unit.find_by_id(params["unit"])
             else
-              PunjabLocalGovernment.find_by_id(params[:punjab_local_govt_id])
+              LocalGovernmentStructure.find_by_id(params[:local_govt_structure_id])
             end
     member = unit.members.new(
                       father_name: params[:father_name],
@@ -12,7 +12,7 @@ class MembersController < ApplicationController
                       phone: params[:phone], cnic: params[:cnic]
                     )
     if member.save
-      flash[:success] = "#{member.name} with CNIC no #{member.cnic} Registered Successfully"
+      flash[:success] = "#{member.name} with CNIC no #{member.cnic} Registered Successfully "
       redirect_to new_member_path 
     else
       flash[:danger] = "#{member.name} with CNIC no #{member.cnic} Not Registered"
@@ -30,14 +30,14 @@ class MembersController < ApplicationController
 
   def area
     district = District.find_by_id(params[:id])
-    @areas = district.punjab_local_governments
+    @areas = district.local_government_structures
       respond_to do |format|
           format.js
       end 
   end
 
   def units
-    area = PunjabLocalGovernment.find_by_id(params[:id])
+    area = LocalGovernmentStructure.find_by_id(params[:id])
     @units = area.units
       respond_to do |format|
           format.js

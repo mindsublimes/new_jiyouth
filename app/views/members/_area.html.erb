@@ -1,4 +1,4 @@
-<%= select_tag('punjab_local_govt_id', options_for_select(areas.map{|p| ["#{p.title} (#{ p.area.titleize})", p.id]}), prompt: 'Select Area', class:"form-select my-select-tag form-select-lg select-area") %>
+<%= select_tag('local_govt_structure_id', options_for_select(areas.map{|p| [p.title, p.id]}), prompt: 'Select Area', class:"form-select my-select-tag form-select-lg select-area") %>
 
 <script>
   $(".select-area").on('change',function(){
