@@ -31,7 +31,7 @@
       <div class="mb-3">
         <label for="selectDistrict">District <span class="text-danger"> *</span></label>
         <div id="province_district">
-          <select class="form-select my-select-tag form-select-lg">
+          <select class="form-select my-select-tag form-select-lg" disabled>
             <option value="" disabled selected>Select District</option>
           </select>
         </div>
@@ -40,19 +40,17 @@
       <div class="mb-3">
         <label for="district_area">Area (Punjab Local Govt Structure)<span class="text-danger"> *</span></label>
         <div id="district_area">
-          <select class="form-select my-select-tag form-select-lg">
+          <select class="form-select my-select-tag form-select-lg" disabled>
             <option value="" disabled selected>Select Area</option>
           </select>
         </div>
       </div>
 
-      <div class="mb-3">
-        <label for="units">District <span class="text-danger"> *</span></label>
-        <div id="area_unit">
-          <select class="form-select my-select-tag form-select-lg">
-            <option value="" disabled selected>Select Unit Area</option>
-          </select>
-        </div>
+      <div class="mb-3 main" id="area_unit">
+        <label for="units">Union Councils <span class="text-danger"> *</span></label>
+        <select class="form-select my-select-tag form-select-lg" disabled>
+          <option value="" disabled selected>Select Union Council</option>
+        </select>
       </div>
 
     </div>
