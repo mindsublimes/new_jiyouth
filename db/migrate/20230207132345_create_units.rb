@@ -3,6 +3,7 @@ class CreateUnits < ActiveRecord::Migration[6.1]
     create_table :units do |t|
       t.references :punjab_local_government
       t.integer :unit_name
+      t.string :title
       t.timestamps
     end
   end
