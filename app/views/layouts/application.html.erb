@@ -6,7 +6,6 @@
     <%= favicon_link_tag 'favicon.ico' %>
 
     <%= csrf_meta_tags %> <%= csp_meta_tag %>
-    <!-- Mobile Metas -->
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no"
@@ -21,23 +20,13 @@
 
     <%= stylesheet_link_tag 'application', media: 'all',
     'data-turbolinks-track': 'reload' %> 
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-    <%# for bottom to top %>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-
-    
-    <%# for CNIC validation %>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/jquery.inputmask.bundle.js"></script>
 
   </head>
 
   <body data-plugin-page-transition>
     <%= render "layouts/shared/header" -%>
-    <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p> 
+      <%= yield %>
     <%= render"layouts/shared/footer" -%>
   </body>
 </html>

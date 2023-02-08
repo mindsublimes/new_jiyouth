@@ -47,6 +47,7 @@ document.addEventListener("turbolinks:load", function () {
     require("packs/theme.js");
     require("packs/custom.js");
     require("packs/theme.init.js");
+    require("packs/scroll.min.js");
 })
 
 // require("packs/view.contact.js");
