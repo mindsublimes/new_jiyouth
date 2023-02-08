@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   namespace :admin do
     resources :members
+    resources :uploaders
   end
   resources :members do
     collection do
