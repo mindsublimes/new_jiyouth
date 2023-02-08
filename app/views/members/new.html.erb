@@ -36,6 +36,25 @@
           </select>
         </div>
       </div>
+
+      <div class="mb-3">
+        <label for="district_area">Area (Punjab Local Govt Structure)<span class="text-danger"> *</span></label>
+        <div id="district_area">
+          <select class="form-select my-select-tag form-select-lg">
+            <option value="" disabled selected>Select Area</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="units">District <span class="text-danger"> *</span></label>
+        <div id="area_unit">
+          <select class="form-select my-select-tag form-select-lg">
+            <option value="" disabled selected>Select Unit Area</option>
+          </select>
+        </div>
+      </div>
+
     </div>
 
     <!-- step three -->
@@ -173,9 +192,11 @@
   $(".select-province").on('change',function(){
     $.ajax({
       type: 'GET',
-      dataType: 'script'
+      dataType: 'script',
       url: '/members/districts',
       data: {id: $(this).val()},
     });
   });
+
+
 </script>

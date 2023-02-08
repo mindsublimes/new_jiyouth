@@ -1,0 +1,13 @@
+<%= select_tag('district', options_for_select(districts.map{|p| [p.title, p.id]}), prompt: 'Select District', class:"form-select my-select-tag form-select-lg select-district") %>
+
+<script>
+  $(".select-district").on('change',function(){
+    $.ajax({
+      type: 'GET',
+      dataType: 'script',
+      url: '/members/area',
+      data: {id: $(this).val()},
+    });
+  });
+	
+</script>
