@@ -1,5 +1,24 @@
 class MembersController < ApplicationController
 
+  def create
+    unit =  if params["unit"].present?
+              Unit.find_by_id(params["unit"])
+            else
+              PunjabLocalGovernment.find_by_id(params[:punjab_local_govt_id])
+            end
+    member = unit.members.new(
+                      father_name: params[:father_name],
+                      name: params[:name], email: params[:email],
+                      phone: params[:phone], cnic: params[:cnic]
+                    )
+    if member.save
+      flash[:success] = "#{member.name} with CNIC no #{member.cnic} Registered Successfully"
+      redirect_to new_member_path 
+    else
+      flash[:danger] = "#{member.name} with CNIC no #{member.cnic} Not Registered"
+      redirect_to new_member_path
+    end
+  end
 
   def districts
     province = Province.find_by_id(params[:id])
