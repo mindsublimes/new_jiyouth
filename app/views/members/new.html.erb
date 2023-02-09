@@ -15,6 +15,7 @@
       <div class="mb-3">
         <label for="cnic"
           >Enter National ID # <span class="text-danger"> (xxxxx-xxxxxx-x)*</span></label>
+        <div class="cnic-alert" style="color: darkred;"></div>
         <input type="text" id="cnic"  placeholder="XXXXX-XXXXXXX-X"  name="cnic" required="true" minlength="15" maxlength="15" >
       </div>
     </div>
@@ -26,7 +27,7 @@
       <div class="mb-3">
         <label for="exampleInputEmail1"
           >Province <span class="text-danger"> *</span></label>
-        <%= select_tag('province', options_for_select(Province.all.map{|p| [p.title, p.id]}), prompt: 'Select Province', class:"form-select my-select-tag form-select-lg select-province") %>
+        <%= select_tag('province', options_for_select(Province.all.map{|p| [p.title, p.id]}), prompt: 'Select Province', class:"form-select my-select-tag form-select-lg select-province", :required => true) %>
       </div>
 
       <div class="mb-3">
@@ -105,10 +106,16 @@
     cnic_no_regex = /^[0-9+]{5}-[0-9+]{7}-[0-9]{1}$/;
     if(cnic_no_regex.test(cnic_no))
     {
-        $("#nextBtn").prop('disabled', false);
+        //check cnic exists?
+            $.ajax({
+              type: 'GET',
+              dataType: 'script',
+              url: '/members/check_cnic',
+              data: {cnic: cnic_no},
+            });
     }
     else {
-      $("#nextBtn").prop('disabled', true); 
+      $("#nextBtn").prop('disabled', true);
     }
   })  
 
@@ -200,6 +207,36 @@
       data: {id: $(this).val()},
     });
   });
+
+  $("#prevBtn").on('click', function() {
+    if (currentTab == 0 && $('.cnic-alert').text() == '') {
+      $("#nextBtn").prop('disabled', false);
+    }
+  })
+
+  $("#nextBtn").on('click', function() {
+    if (currentTab == 1) {
+      if ($("#local_govt_structure_id").val() != '' && $("#province").val() != '' && $("#district").val() != '' ) {
+        if ($('#unit').length > 0 && $("#local_govt_structure_id").val() != '') {
+          if ($('#unit').val() != '') {
+            $("#nextBtn").prop('disabled', false);
+          }
+          else {
+            $("#nextBtn").prop('disabled', true); 
+          }
+        }
+        else if ($('#unit').length == 0) {
+          $("#nextBtn").prop('disabled', false); 
+        }
+        else {
+          $("#nextBtn").prop('disabled', true); 
+        }
+      }
+      else {
+        $("#nextBtn").prop('disabled', true); 
+      }
+    }
+  })
 
 
 </script>

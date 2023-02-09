@@ -1,1 +1,11 @@
-$('#province_district').html("<%= escape_javascript(render partial: 'districts', locals: { districts: @districts } ) %>")
+<% if @districts != nil %>
+	$('#province_district').html("<%= escape_javascript(render partial: 'districts', locals: { districts: @districts } ) %>")
+<% else %>
+	$('#province_district').html("<%= escape_javascript(render partial: 'empty_district') %>")
+<% end %>
+
+$('#district_area').html("<%= escape_javascript(render partial: 'empty_area' ) %>")
+
+$('#area_unit').html("<%= escape_javascript(render partial: 'empty_unit' ) %>")
+
+$("#nextBtn").prop('disabled', true);

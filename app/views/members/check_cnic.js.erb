@@ -1,0 +1,6 @@
+<% if @member.present? %>
+	$('.cnic-alert').html('Cnic Already Exist')
+<% else %>
+	$('.cnic-alert').html('')
+	$("#nextBtn").prop('disabled', false);
+<% end %>

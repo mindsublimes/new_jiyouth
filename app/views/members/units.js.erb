@@ -1,5 +1,23 @@
-<% if @units.count > 0 %>
-	$('#area_unit').html("<%= escape_javascript(render partial: 'units', locals: { units: @units } ) %>")
+<% if @units != nil %>
+	<% if @units.count > 0 %>
+		$('#area_unit').html("<%= escape_javascript(render partial: 'units', locals: { units: @units } ) %>")
+		$("#nextBtn").prop('disabled', true);
+	<% else %>
+		$('#area_unit').html("<%= escape_javascript(render partial: 'empty_partial', locals: { units: @units } ) %>")
+		$("#nextBtn").prop('disabled', false);
+	<% end %>
 <% else %>
-	$('#area_unit').html("<%= escape_javascript(render partial: 'empty_partial', locals: { units: @units } ) %>")
+	$('#area_unit').html("<%= escape_javascript(render partial: 'empty_unit' ) %>")
+	$("#nextBtn").prop('disabled', true);
 <% end %>
+
+$(".select-unit").on('change',function(){
+	if ($(this).val() == '') {
+		$("#nextBtn").prop('disabled', true);
+	}
+	else {
+		$("#nextBtn").prop('disabled', false);	
+	}
+
+});
+

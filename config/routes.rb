@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       get :districts
       get :area
       get :units
+      get :check_cnic
     end
   end
 

@@ -1,1 +1,8 @@
-$('#district_area').html("<%= escape_javascript(render partial: 'area', locals: { areas: @areas } ) %>")
+<% if @areas != nil %>
+	$('#district_area').html("<%= escape_javascript(render partial: 'area', locals: { areas: @areas } ) %>")
+<% else %>
+	$('#district_area').html("<%= escape_javascript(render partial: 'empty_area' ) %>")
+<% end %>
+
+$('#area_unit').html("<%= escape_javascript(render partial: 'empty_unit' ) %>")
+$("#nextBtn").prop('disabled', true);

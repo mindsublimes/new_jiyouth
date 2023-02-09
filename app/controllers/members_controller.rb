@@ -20,17 +20,24 @@ class MembersController < ApplicationController
     end
   end
 
+  def check_cnic
+    @member = Member.find_by_cnic(params[:cnic])
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def districts
     province = Province.find_by_id(params[:id])
-    @districts = province.districts
+    @districts = province.present? ? province.districts : nil
       respond_to do |format|
-          format.js
+        format.js
       end 
   end
 
   def area
     district = District.find_by_id(params[:id])
-    @areas = district.local_government_structures
+    @areas = district.present? ? district.local_government_structures : nil
       respond_to do |format|
           format.js
       end 
@@ -38,7 +45,7 @@ class MembersController < ApplicationController
 
   def units
     area = LocalGovernmentStructure.find_by_id(params[:id])
-    @units = area.units
+    @units = area.present? ? area.units : nil
       respond_to do |format|
           format.js
       end 
