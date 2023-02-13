@@ -1,49 +1,51 @@
-
 <div role="main" class="main">
-  <div id="examples" class="container py-">
-    <div class="row">
-      <div class="col">
-        <div class="row">
-          <div class="col pb-3">
-            <!-- <h4>Bordered</h4> -->
-            <div class="table-responsive">  
-              <table class="table table-bordered table-hover">
-                <thead>
-                  <tr>
-                    <th>No.</th>
-                    <th>Full Name</th>
-                    <th>Father Name</th>
-                    <th>CNIC #</th>
-                    <th>Phone #</th>
-                    <th>Email Address</th>
-                    <th>Area</th>
-                    <th>Tehsil Council</th>
-                    <th>District</th>
-                    <th>Province</th>
-                    
-                  </tr>
-                </thead>
-                <tbody>
-                  <% @members.each_with_index do |member,index|  %>
+  <div id="examples" class="container-fluid mx-3-">
+    <div class="row mt-5 mb-4">
+      <h2>All Members</h2>
+    </div>
+    
+    <div class="table-responsive">
+
+      <div class="row">
+        <div class="col">
+          <div class="row">
+            <div class="col pb-3 mb-5 ">
+              <!-- <h4>Bordered</h4> -->
+              <div class="table-responsive">  
+                <table class="table table-bordered table-hover">
+                  <thead class="table-head-blue">
                     <tr>
-                      <td><%= index + 1 %></td>
-                      <td><%= member.name%></td>
-
-                      <td><%= member.father_name%></td>
-
-                      <td><%= member.cnic%></td>
-                      <td><%= member.phone%></td>
-
-                      <td><%= member.email%></td>
-
-                      <td><%= member.area.title%></td>
-                      <td><%= member.area.local_government_structure.title%></td>
-                      <td><%= member.area.local_government_structure.district.title%></td>
-                      <td><%= member.area.local_government_structure.district.province.title%></td>
+                      <th>No.</th>
+                      <th>Full Name</th>
+                      <th>Father Name</th>
+                      <th>CNIC #</th>
+                      <th>Phone #</th>
+                      <th>Email Address</th>
+                      <th>Area</th>
+                      <th>Tehsil Council</th>
+                      <th>District</th>
+                      <th>Province</th>
+                      
                     </tr>
-                  <% end %>               
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    <% @members.each_with_index do |member,index|  %>
+                      <tr>
+                        <td><%= index + 1 %></td>
+                        <td><%= member.name%></td>
+                        <td><%= member.father_name%></td>
+                        <td><%= member.cnic%></td>
+                        <td><%= member.phone%></td>
+                        <td><%= member.email%></td>
+                        <td><%= member.area.title%></td>
+                        <td><%= member.area.local_government_structure.title%></td>
+                        <td><%= member.area.local_government_structure.district.title%></td>
+                        <td><%= member.area.local_government_structure.district.province.title%></td>
+                      </tr>
+                    <% end %>               
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
