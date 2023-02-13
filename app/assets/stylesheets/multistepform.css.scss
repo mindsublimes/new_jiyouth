@@ -97,6 +97,10 @@
   }
   #signUpForm .step {
     display: none;
+    .notify-message{
+      font-size: 12px;
+      color: #0e1e40;
+    }
   }
   #signUpForm .form-footer {
     overflow: auto;
