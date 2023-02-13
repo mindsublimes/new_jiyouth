@@ -13,9 +13,9 @@ class MembersController < ApplicationController
                     )
     if member.save
       flash[:success] = "#{member.name} with CNIC no #{member.cnic} Registered Successfully "
-      redirect_to home_index_path
+      redirect_to root_path
     else
-      flash[:danger] = "#{member.name} with CNIC no #{member.cnic} Not Registered"
+      flash[:error] = "#{member.name} with CNIC no #{member.cnic} Not Registered"
       redirect_to new_member_path
     end
   end

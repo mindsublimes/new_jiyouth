@@ -26,12 +26,8 @@
 
   <body data-plugin-page-transition>
     <%= render "layouts/shared/header" -%>
-      <% flash.each do |type, msg| %>
-        <div class="alert alert-<%= type %>">
-          <%= msg %>
-        </div>
-      <% end %>
       <%= yield %>
+      <%= toastr_flash %>
     <%= render"layouts/shared/footer" -%>
   </body>
 </html>

@@ -19,7 +19,7 @@ ActiveStorage.start()
 require("@popperjs/core")
 
 import "bootstrap"
-
+global.toastr = require("toastr")
 
 // Import the specific modules you may need (Modal, Alert, etc)
 import { Tooltip, Popover } from "bootstrap"
