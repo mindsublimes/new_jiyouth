@@ -1,0 +1,48 @@
+<section class="pp-section">
+	<div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12 text-right">
+        <%= link_to "Add new Team Member", new_admin_team_member_path, class: "btn btn-primary"%>                
+      </div>
+    </div>
+  </div>
+  <div class="container ">  
+    <div class="row">
+      <div class="col">
+        <div class="table-responsive">
+			    <table class="table table-bordered">
+			      <thead class="bg-dark-blue">
+			        <tr>
+			          <th scope="col">#</th>
+			          <th scope="col">Name</th>
+			          <th scope="col">Image</th>
+			          <th scope="col">Ation</th>
+			        </tr>
+			      </thead>
+			      <tbody>
+			        <% @team_members.each do |team_member| %>
+			        	<tr>
+					        <th scope="row"><%= team_member.id %></th>
+					        <td><%= team_member.name %></td>
+					        <td>
+					        	<% if team_member.image.attached? %>
+					        		<%= image_tag team_member.image, style:"width: 200px; display: block"%>
+					        	<% end %>
+					        	</td>
+					        <td>
+					        <div class="d-inline  title-action-btn">
+					        	<%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_admin_team_member_path(team_member.id) %>
+	            			<%= button_to  admin_team_member_path(team_member.id), method: :delete  do %>
+	                		<span class="fa fa-trash"></span>
+	            			<% end %>
+	            		</div>
+					        </td>
+					      </tr>
+			        <% end %>
+			      </tbody>
+			    </table>
+			  </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :members
     resources :uploaders
+    resources :team_members
+    resources :responsibilities
+    resources :responsibility_sessions
   end
   resources :members do
     collection do

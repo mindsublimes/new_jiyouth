@@ -1,0 +1,42 @@
+<section class="pp-section">
+	<div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12 text-right">
+        <%= link_to "Add Responsibilty", new_admin_responsibility_path, class: "btn btn-primary"%>                
+      </div>
+    </div>
+  </div>
+  <div class="container ">  
+    <div class="row">
+      <div class="col">
+        <div class="table-responsive">
+			    <table class="table table-bordered">
+			      <thead class="bg-dark-blue">
+			        <tr>
+			          <th scope="col">#</th>
+			          <th scope="col">Title</th>
+			          <th scope="col">Ation</th>
+			        </tr>
+			      </thead>
+			      <tbody>
+			        <% @responsibilities.each do |res| %>
+			        	<tr>
+					        <th scope="row"><%= res.id %></th>
+					        <td><%= res.title %></td>
+					        <td>
+					        <div class="d-inline  title-action-btn">
+					        	<%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_admin_responsibility_path(res.id) %>
+	            			<%= button_to  admin_responsibility_path(res.id), method: :delete  do %>
+	                		<span class="fa fa-trash"></span>
+	            			<% end %>
+	            		</div>
+					        </td>
+					      </tr>
+			        <% end %>
+			      </tbody>
+			    </table>
+			  </div>
+      </div>
+    </div>
+  </div>
+</section>

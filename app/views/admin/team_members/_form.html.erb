@@ -1,0 +1,12 @@
+<% url = params[:action] == 'edit' ? admin_team_member_path : admin_team_members_path %>
+<%= form_for @team_member, url: url do |f| -%>
+	<div class="row">
+		<%= f.label :name, class:"col-sm-2"-%>
+		<%= f.text_field :name, class:"col-sm-3" -%>
+	</div>
+	<div class="row">
+		<%= f.label :image %>
+		<%= f.file_field :image, class: "form-control" %>
+	</div>
+	<%= f.submit %>
+<% end -%>
