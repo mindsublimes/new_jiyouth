@@ -62,6 +62,13 @@
                     ><i class="fab fa-youtube"></i
                   ></a>
                 </li>
+                <li class="nav-item">
+                  <% if user_signed_in? %>
+                    <%= button_to "Logout", destroy_user_session_path, method: :delete, class:"nav navbar-nav" %>
+                  <% else %>
+                    <%= button_to "Login", new_user_session_path, class:"nav navbar-nav" %>
+                  <% end %>
+                  </li>
               </ul>
             </div>
           </div>
