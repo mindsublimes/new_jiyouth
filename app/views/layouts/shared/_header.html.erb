@@ -62,6 +62,13 @@
                     ><i class="fab fa-youtube"></i
                   ></a>
                 </li>
+                <li class="nav-item">
+                  <% if user_signed_in? %>
+                    <%= button_to "Logout", destroy_user_session_path, method: :delete, class:"nav navbar-nav" %>
+                  <% else %>
+                    <%= button_to "Login", new_user_session_path, class:"nav navbar-nav" %>
+                  <% end %>
+                  </li>
               </ul>
             </div>
           </div>
@@ -73,7 +80,7 @@
         <div class="header-column">
           <div class="header-row">
             <div class="header-logo header-logo-sticky-change">
-              <a href="" onClick="window.location='/'">
+              <a href="/">
               <%#= image_tag "jiyouthlogo.png", class:"header-logo-sticky opacity-0", alt:"JiYouth"%>
                 <img
                   class="header-logo-sticky opacity-0"

@@ -1,0 +1,8 @@
+<% url = params[:action] == 'edit' ? admin_responsibility_path : admin_responsibilities_path %>
+<%= form_for @responsibility, url: url do |f| -%>
+	<div class="row">
+		<%= f.label :title, class:"col-sm-2"-%>
+		<%= f.text_field :title, class:"col-sm-3" -%>
+	</div>
+	<%= f.submit %>
+<% end -%>

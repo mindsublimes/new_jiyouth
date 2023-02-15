@@ -4,7 +4,6 @@
 // that code so it'll be compiled.
 
 
-
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
@@ -42,12 +41,25 @@ document.addEventListener("turbolinks:load", () => {
 })
 
 // require("packs/modernizr.min.js");
-document.addEventListener("turbolinks:load", function () {
-    require("packs/plugins.min.js");
-    require("packs/theme.js");
-    require("packs/custom.js");
-    require("packs/theme.init.js");
-    require("packs/scroll.min.js");
+document.addEventListener('turbolinks:load', function () {
+  (function()
+  {
+    if( window.localStorage )
+    {
+      if( !localStorage.getItem('firstLoad') )
+      {
+        localStorage['firstLoad'] = true;
+        window.location.reload();
+      }  
+      else
+        localStorage.removeItem('firstLoad');
+    }
+  })();
+  require("packs/plugins.min.js");
+  require("packs/theme.js");
+  require("packs/custom.js");
+  require("packs/theme.init.js");
+  require("packs/scroll.min.js");
 })
 
 // require("packs/view.contact.js");

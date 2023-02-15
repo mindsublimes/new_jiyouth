@@ -1,0 +1,48 @@
+<section class="pp-section">
+	<div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12 text-right">
+        <%= link_to "Add Responsibilty Session", new_admin_responsibility_session_path, class: "btn btn-primary"%>                
+      </div>
+    </div>
+  </div>
+  <div class="container ">  
+    <div class="row">
+      <div class="col">
+        <div class="table-responsive">
+			    <table class="table table-bordered">
+			      <thead class="bg-dark-blue">
+			        <tr>
+			          <th scope="col">#</th>
+			          <th scope="col">Team Member</th>
+			          <th scope="col">Responsibilty</th>
+			          <th scope="col">Start Date</th>
+			          <th scope="col">End Date</th>
+			          <th scope="col">Action</th>
+			        </tr>
+			      </thead>
+			      <tbody>
+			        <% @responsibility_sessions.each do |res_session| %>
+			        	<tr>
+					        <th scope="row"><%= res_session.id %></th>
+					        <th scope="row"><%= res_session.team_member.name %></th>
+					        <th scope="row"><%= res_session.responsibility.title %></th>
+					        <td scope="row"><%= res_session.start_date %></td>
+					        <td scope="row"><%= res_session.end_date %></td>
+					        <td>
+					        <div class="d-inline  title-action-btn">
+					        	<%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_admin_responsibility_session_path(res_session.id) %>
+	            			<%= button_to  admin_responsibility_session_path(res_session.id), method: :delete  do %>
+	                		<span class="fa fa-trash"></span>
+	            			<% end %>
+	            		</div>
+					        </td>
+					      </tr>
+			        <% end %>
+			      </tbody>
+			    </table>
+			  </div>
+      </div>
+    </div>
+  </div>
+</section>

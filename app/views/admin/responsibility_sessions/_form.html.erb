@@ -1,0 +1,18 @@
+<% url = params[:action] == 'edit' ? admin_responsibility_session_path : admin_responsibility_sessions_path %>
+<%= form_for @responsibility_session, url: url do |f| -%>
+	<div class="row">
+		<%= f.label :start_date, class:"col-sm-2"-%>
+		<%= f.datetime_field :start_date, class:"col-sm-3" -%>
+	</div>
+	<div class="row">
+		<%= f.label :end_date, class:"col-sm-2"-%>
+		<%= f.datetime_field :end_date, class:"col-sm-3" -%>
+	</div>
+	<div class="row">
+		<%= f.select :team_member_id, options_for_select(TeamMember.all.map { |team_member| [team_member.name, team_member.id] },:selected => f.object.team_member_id) -%><br>
+	</div>
+		<div class="row">
+		<%= f.select :responsibility_id, options_for_select(Responsibility.all.map { |res| [res.title, res.id] },:selected => f.object.responsibility_id) -%><br>
+	</div>
+	<%= f.submit %>
+<% end -%>
