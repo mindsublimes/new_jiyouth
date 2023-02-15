@@ -18,8 +18,8 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'team/index'
-  get 'team/show'
+  resources :team, only: [:index, :show] 
+
   get 'form/index'
   get 'form/show'
   get 'aboutus/index'
