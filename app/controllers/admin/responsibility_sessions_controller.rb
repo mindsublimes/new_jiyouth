@@ -1,4 +1,4 @@
-class Admin::ResponsibilitySessionsController < ApplicationController
+class Admin::ResponsibilitySessionsController < Admin::BaseController
 	
 	before_action :find_params, only: [:edit, :update, :show, :destroy]
 	

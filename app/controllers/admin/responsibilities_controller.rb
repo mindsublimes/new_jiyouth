@@ -1,4 +1,4 @@
-class Admin::ResponsibilitiesController < ApplicationController
+class Admin::ResponsibilitiesController < Admin::BaseController
   before_action :find_params, only: [:edit, :update, :show, :destroy]
 	
 	 def index

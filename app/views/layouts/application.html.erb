@@ -25,9 +25,11 @@
   </head>
 
   <body data-plugin-page-transition>
-    <%= render "layouts/shared/header" -%>
+
+     <%= render "layouts/shared/header" -%>
       <%= yield %>
       <%= toastr_flash %>
     <%= render"layouts/shared/footer" -%>
+
   </body>
 </html>

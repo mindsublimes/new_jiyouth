@@ -1,4 +1,4 @@
-class Admin::TeamMembersController < ApplicationController
+class Admin::TeamMembersController < Admin::BaseController
   before_action :find_params, only: [:edit, :update, :show, :destroy]
 
 	 def index

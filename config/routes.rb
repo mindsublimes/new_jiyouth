@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'dashboard/index'
+  end
   get 'contactus/index'
   devise_for :users
   
@@ -26,6 +29,6 @@ Rails.application.routes.draw do
   get 'news/index'
   get 'news/show'
   get 'home/index'
-  root to: 'home#index'
+  root to: "home#index"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -1,4 +1,4 @@
-class Admin::UploadersController < ApplicationController
+class Admin::UploadersController < Admin::BaseController
   require 'spreadsheet'
 
   def create
