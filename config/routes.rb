@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'political_leadership/index'
+  get 'political_leadership/show'
   namespace :admin do
     get 'dashboard/index'
   end
