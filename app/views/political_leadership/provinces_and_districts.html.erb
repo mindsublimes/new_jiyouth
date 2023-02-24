@@ -1,0 +1,27 @@
+<% if @provinces.present? %>
+  <div class="body">      
+    <div role="main" class="main">
+      <div class="container py-4">
+        <ul class="nav nav-pills sort-source sort-source-style-3 justify-content-center" data-sort-id="team" data-option-key="filter">
+          <% @provinces.each do |province| %>
+            <li class="nav-item" data-option-value="*"><%= link_to province.title, districts_political_leadership_path(province), class: 'nav-link text-2-5 text-uppercase', remote: true %>
+            </li>
+          <% end %>
+        </ul>
+          <div class=" mt-4 pt-2"  >
+          <div class="row team-list">
+            <div class="col-12 d-flex flex-wrap justify-content-center" id="district-names">
+              <%= render 'districts', districts: @districts %>
+            </div>           
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
+
+  <div class="political-leadership-section">
+
+  </div>
+<% else %>
+  <div>No record</div>
+<% end %>

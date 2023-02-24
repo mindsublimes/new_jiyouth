@@ -1,4 +1,4 @@
 class DistrictJi < ApplicationRecord
 	belongs_to :province_ji
-	has_many :assembly_jis
+	has_many :assembly_jis, dependent: :destroy
 end

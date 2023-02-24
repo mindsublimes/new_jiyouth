@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
-  get 'political_leadership/index'
-  get 'political_leadership/show'
+  
+  resources :political_leadership, path: '', only: [] do
+    collection do
+      get :provinces_and_districts
+    end
+
+    member do
+      get :districts
+      get :constituencies
+    end
+  end
+
   namespace :admin do
     get 'dashboard/index'
   end

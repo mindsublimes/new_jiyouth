@@ -1,3 +1,3 @@
 class ProvinceJi < ApplicationRecord
-	has_many :district_jis
+	has_many :district_jis, dependent: :destroy
 end
