@@ -47,7 +47,6 @@ document.addEventListener('turbolinks:load', function () {
   require("packs/theme.init.js");
   require("packs/scroll.min.js");
   
-  // require("packs/admin/adminlte.js");
 
   // Both of these are from the Bootstrap 5 docs
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
