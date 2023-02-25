@@ -1,18 +1,18 @@
 <div class="body">      
   <div role="main" class="main">
     <div class="container py-4">
-      <div class="row team-list text-center">
+      <div class="team-list text-center">
         <h2 class="text-color-dark font-weight-normal text-7 mb-2 pt-2 mb-4 pt-0 mt-2">National <strong class="font-weight-extra-bold"> Assembly</strong></h2>
         
-          <div class="col-12 d-flex flex-wrap row team-list sort-destination justify-content-center">
+          <div class="col-sm-12 d-flex flex-wrap row team-list sort-destination justify-content-center">
 
             <% @national_assemblies.each do |na| %>
               <div class="col-12 col-sm-6 col-lg-3 isotope-item leadership">
                 <span class="thumb-info thumb-info-hide-wrapper-bg mb-4">
                   <span class="thumb-info-wrapper">
                     
-                    <img src="/assets/team/rusel_367x367.jpg" class="img-fluid" alt="">
-                    <span class="thumb-info-title">
+                    <img src="/assets/team/dummy-image.jpg" class="img-fluid" alt="">
+                    <span class="thumb-info-title" title="<%= na.candidate_jis&.first&.name %>">
                       <span class="thumb-info-inner"><%= na.candidate_jis&.first&.name&.present? ? na.candidate_jis&.first&.name.truncate(20) : 'No candidate' %></span>
                       <span class="thumb-info-type"><%= na.title %></span>
                     </span>
@@ -29,17 +29,17 @@
               </div>         
             <% end %>
           </div>
-        
-        
+      </div>
+      <div class="team-list text-center">
         <h2 class="text-color-dark font-weight-normal text-7 mb-0 pt-2 mb-4 pt-0 mt-2">Provisional <strong class="font-weight-extra-bold">Assembly</strong></h2>
-        <div class="col-12 d-flex flex-wrap row team-list sort-destination justify-content-center">
-          <% @provincial_assemblies.each do |pp| %>
+          <div class="col-sm-12 d-flex flex-wrap row team-list sort-destination justify-content-center">
+            <% @provincial_assemblies.each do |pp| %>
               <div class="col-12 col-sm-6 col-lg-3 isotope-item leadership">
                 <span class="thumb-info thumb-info-hide-wrapper-bg mb-4">
                   <span class="thumb-info-wrapper">
                     
-                    <img src="/assets/team/rusel_367x367.jpg" class="img-fluid" alt="">
-                    <span class="thumb-info-title">
+                    <img src="/assets/team/dummy-image.jpg" class="img-fluid" alt="">
+                    <span class="thumb-info-title" title="<%= pp.candidate_jis&.first&.name %>">
                       <span class="thumb-info-inner"><%= pp.candidate_jis&.first&.name&.present? ? pp.candidate_jis&.first&.name.truncate(20) : 'No candidate' %></span>
                       <span class="thumb-info-type"><%= pp.title %></span>
                     </span>

@@ -1,6 +1,6 @@
 <% districts.each do |district| %>
   <div class="form-group col-btn mx-2">
-  <%= link_to "#{district.title}", constituencies_political_leadership_path(district.title.downcase), class:"rounded-pill btn btn-primary btn-rounded btn-px-4 btn-py-2 font-weight-bold", style:"width: 200px;"%>
+  <%= link_to "#{district.title}", constituencies_political_leadership_path(district.title.downcase), class:" btn btn-primary btn-rounded btn-px-4 btn-py-2 font-weight-bold", style:"width: 200px;"%>
     <!-- <button class="btn btn-primary btn-rounded btn-px-4 btn-py-2 font-weight-bold" ><%= "Punjab pakistan"%></button> -->
   </div>
 <% end %>

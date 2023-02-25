@@ -3,8 +3,8 @@
     <div role="main" class="main">
       <div class="container py-4">
         <ul class="nav nav-pills sort-source sort-source-style-3 justify-content-center" data-sort-id="team" data-option-key="filter">
-          <% @provinces.each do |province| %>
-            <li class="nav-item" data-option-value="*"><%= link_to province.title, districts_political_leadership_path(province), class: 'nav-link text-2-5 text-uppercase', remote: true %>
+          <% @provinces.each_with_index do |province, index| %>
+            <li class="nav-item province-selector <%= 'active' if index == 0 %>", data-option-value="*"><%= link_to province.title, districts_political_leadership_path(province), class: "nav-link text-2-5 text-uppercase province-selector #{'active' if index == 0 }", remote: true %>
             </li>
           <% end %>
         </ul>
@@ -25,3 +25,13 @@
 <% else %>
   <div>No record</div>
 <% end %>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.province-selector').click(function() {
+      $('.province-selector').removeClass("active");
+      $(this).addClass('active');
+      $(this).children().addClass('active')
+    });
+  });
+
+</script>
