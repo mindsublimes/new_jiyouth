@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :political_leadership, path: '', only: [] do
+  resources :political_leadership do
     collection do
       get :provinces_and_districts
     end
@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     resources :responsibilities
     resources :responsibility_sessions
   end
+  
   resources :members do
     collection do
       get :districts
